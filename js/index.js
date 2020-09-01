@@ -29,5 +29,17 @@ entireBody.addEventListener("keydown", (key)=>{
     alert("The 'A' key was pressed")
 })
 
+// SCROLL SECTION
+window.addEventListener("scroll", () =>{
+    const scrollable = document.documentElement.scrollHeight-window.innerHeight;
+    const scrolled = window.scrollY;
+    
+    if(Math.ceil(scrolled) === scrollable){
+        alert("You've reached the bottom!")
+    }
+});
+
 // WHEEL SECTION
-  
+window.addEventListener("wheel", ()=>{
+    
+})
