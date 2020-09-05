@@ -40,6 +40,27 @@ window.addEventListener("scroll", () =>{
 });
 
 // WHEEL SECTION
+const imgContent = document.querySelector("img-content img")
 window.addEventListener("wheel", ()=>{
-    
+    imgContent.src="https://picsum.photos/400/300"
+})
+
+// RESIZE SECTION
+const secImg = document.querySelector(".img-content img")
+
+window.addEventListener("resize", () => {
+    secImg.src = "https://picsum.photos/400/300";
+  });
+
+//   focus, select, drag/drop
+
+// LOAD SECTION 
+window.addEventListener("load", () =>{
+    log("Page is fully Loaded!")
+})
+
+// FOCUS SECTION
+const headerImg = document.querySelector(".intro img");
+headerImg.addEventListener("focus", () =>{
+    headerImg.style.opacity="1.5"
 })
