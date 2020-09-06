@@ -15,15 +15,13 @@ logoWork.addEventListener("mouseleave", (event) => {
 
 // DOUBLE CLICK SECTION 
 const navChange = document.querySelector(".nav")
-console.log(navChange)
 navChange.addEventListener("dblclick", (event)=>{
-    console.log(event.target)
-    event.target.style.color="pink";
-})
+        event.target.style.color="orange"
+        event.preventDefault();
+    })
 
 // KEYDOWN SECTION
 const entireBody = document.querySelector("body")
-log(entireBody)
 entireBody.addEventListener("keydown", (key)=>{
     if(key.keyCode == "65") 
     alert("The 'A' key was pressed")
@@ -60,7 +58,41 @@ window.addEventListener("load", () =>{
 })
 
 // FOCUS SECTION
-const headerImg = document.querySelector(".intro img");
-headerImg.addEventListener("focus", () =>{
-    headerImg.style.opacity="1.5"
+navChange.addEventListener("focus", (event) =>{
+    event.target.style.color="yellow";
+})
+
+// CLICK SECTION
+const bottomBtn = document.querySelectorAll(".btn")
+// log(bottomBtn);
+bottomBtn.forEach((el)=>{
+    el.addEventListener("click", (event)=>{
+        event.target.innerHTML = "Clicked";
+    })        
+})
+
+// DRAG SECTION
+
+const title=document.querySelector("h2");
+title.addEventListener("drag", ()=>{
+    log("You're draging Welcome to FUN BUS!")
+})
+title.addEventListener("dragend", ()=>{
+    return;
+})
+
+
+// NESTED SECTION 
+const first = document.querySelector(".home");
+const second = document.querySelector(".content-section");
+
+first.addEventListener("click", ()=>{
+    first.style.backgroundColor="pink"
+    log("second")
+});
+second.addEventListener("click" , () =>{
+    second.style.backgroundColor= "blue"
+    log("first")
+    event.stopPropagation();
+
 })
